@@ -10,7 +10,7 @@ public class ItemByWeight implements Item {
     private final Product product;
     private final BigDecimal weightInKilos;
 
-    ItemByWeight(final WeighedProduct product, final BigDecimal weightInKilos) {
+    public ItemByWeight(final WeighedProduct product, final BigDecimal weightInKilos) {
         this.product = product;
         this.weightInKilos = weightInKilos;
     }
