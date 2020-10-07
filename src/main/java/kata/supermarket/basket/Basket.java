@@ -1,10 +1,10 @@
 package kata.supermarket.basket;
 
-import kata.supermarket.calculator.TotalCalculator;
 import kata.supermarket.item.Item;
 import kata.supermarket.item.Items;
 
-import java.math.BigDecimal;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Basket {
     private final Items items;
@@ -17,8 +17,7 @@ public class Basket {
         items.add(item);
     }
 
-    public BigDecimal total() {
-        return new TotalCalculator().calculate();
+    public Collection<Item> items() {
+        return Collections.unmodifiableCollection(items.getItems());
     }
-
 }

@@ -1,5 +1,6 @@
 package kata.supermarket.calculator;
 
+import kata.supermarket.basket.Basket;
 import kata.supermarket.item.Item;
 
 import java.math.BigDecimal;
@@ -7,11 +8,11 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TotalCalculator implements Calculator {
+public class DiscountsCalculator implements Calculator {
     private final List<Item> items;
 
-    public TotalCalculator() {
-        this.items = new ArrayList<>();
+    DiscountsCalculator(Basket basket) {
+        this.items = new ArrayList<>(basket.items());
     }
 
     @Override
@@ -28,10 +29,10 @@ public class TotalCalculator implements Calculator {
 
     /**
      * TODO: This could be a good place to apply the results of
-     *  the discount calculations.
-     *  It is not likely to be the best place to do those calculations.
-     *  Think about how Basket could interact with something
-     *  which provides that functionality.
+     * the discount calculations.
+     * It is not likely to be the best place to do those calculations.
+     * Think about how Basket could interact with something
+     * which provides that functionality.
      */
     private BigDecimal discounts() {
         return BigDecimal.ZERO;
